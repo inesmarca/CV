@@ -29,33 +29,53 @@
                   <content-container class="fill-height" />
                 </v-flex>
               </v-layout>
-              <!--
-              <v-layout>
-                <v-flex md12>
-                  <timeline-primary />
-                  <timeline-endless />
-                </v-flex>
-              </v-layout>
-              -->
             </v-flex>
           </v-layout>
         </v-container>
       </v-content>
     </v-fade-transition>
-    <v-fab-transition>
+    <v-speed-dial
+        v-model="fab"
+        bottom
+        right
+        direction="top"
+        open-on-hover
+        transition="slide-y-reverse-transition"
+        fixed
+        class="ma-md-4"
+    >
+      <template v-slot:activator>
+        <v-btn
+            v-model="fab"
+            dark
+            fab
+            large
+            class="mt-2"
+        >
+          <v-icon v-if="fab">
+            mdi-arrow-up
+          </v-icon>
+          <v-icon v-else>
+            mdi-arrow-down
+          </v-icon>
+        </v-btn>
+      </template>
       <v-btn
-          fixed
           fab
-          large
           dark
-          bottom
-          right
-          class="v-btn--example"
-          @click="generateReport()"
+          color="blue-grey darken-2"
       >
-        <v-icon>mdi-plus</v-icon>
+        <v-icon>mdi-download</v-icon>
       </v-btn>
-    </v-fab-transition>
+      <v-btn
+          fab
+          dark
+          color="blue-grey darken-1"
+          @click="changeLang()"
+      >
+        {{ language }}
+      </v-btn>
+    </v-speed-dial>
   </v-app>
 </template>
 
@@ -73,21 +93,45 @@ export default {
     ContentContainer,
     SidebarContainer,
   },
-  mounted () {
-    // eslint-disable-next-line no-unused-vars
-    /*
-    const line = new LeaderLine(
-      document.getElementById('to-timeline'),
-      document.getElementById('timeline'),
-      {
-        size      : 2,
-        color     : this.$vuetify.theme.primary,
-        startLabel: LeaderLine.captionLabel('To the Journey ...'),
-      }
-    )
-
-     */
+  data() {
+    return {
+      fab: false,
+      lan: undefined
+    }
   },
+  mounted () {
+    if (localStorage.getItem('lang') !== null) {
+      this.lan = localStorage.getItem('lang')
+    } else {
+      this.lan = this.$i18n.locale
+      this.updateLang()
+    }
+    this.$i18n.locale = this.lan
+  },
+  computed: {
+    language() {
+      if (this.lan === "es") {
+        return "ES"
+      } else {
+        return "EN"
+      }
+    }
+  },
+  methods: {
+    changeLang() {
+      if (this.lan === "es") {
+        this.lan = "en"
+        this.$i18n.locale = 'en'
+      } else {
+        this.lan = "es"
+        this.$i18n.locale = 'es'
+      }
+      this.updateLang()
+    },
+    updateLang() {
+      localStorage.setItem('lang', this.lan)
+    }
+  }
 }
 </script>
 

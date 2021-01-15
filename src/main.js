@@ -16,7 +16,6 @@ const i18n = new VueI18n({
     messages, // set locale messages
 })
 
-
 new Vue({
     render: (h) => h(App),
     i18n

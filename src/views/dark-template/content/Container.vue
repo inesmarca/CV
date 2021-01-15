@@ -138,15 +138,6 @@ export default {
         source: '(My awesome colleagues)',
       },
     ],
-    educations: [
-      {
-        from       : '2015',
-        to         : '2019 (not finished yet)',
-        title      : 'Bachelor\'s degree, Information Technology',
-        location   : 'Seraj University',
-        description: 'Became a member of University Academic Association of Computer Science',
-      },
-    ],
     skills: [
       {
         title: 'C',
@@ -185,6 +176,14 @@ export default {
       },
     ],
   }),
+  computed: {
+    educations() {
+      return [
+        this.$t("message.school"),
+        this.$t("message.university")
+      ]
+    }
+  }
 }
 </script>
 

@@ -66,11 +66,11 @@
 import Avatar from '@/views/dark-template/sidebar/Avatar'
 import SidebarSection from '@/views/dark-template/sidebar/Section'
 export default {
-  name      : 'Sidebar',
+  name: 'Sidebar',
   components: { SidebarSection, Avatar },
-  data () {
-    return {
-      sections: {
+  computed: {
+    sections() {
+      return {
         info: {
           title: this.$t("message.info").toUpperCase(),
           items: [
@@ -127,20 +127,20 @@ export default {
           title: this.$t("message.languages").toUpperCase(),
           items: [
             {
-              text : this.$t("message.spanish"),
+              text: this.$t("message.spanish"),
               value: 100,
             },
             {
-              text : this.$t("message.english"),
+              text: this.$t("message.english"),
               value: 95,
             },
             {
-              text : this.$t("message.chinese"),
+              text: this.$t("message.chinese"),
               value: 30,
             },
           ],
         },
-      },
+      }
     }
   },
 }
