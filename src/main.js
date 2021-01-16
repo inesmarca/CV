@@ -5,6 +5,7 @@ import '@/plugins/vuetify'
 import '@/components'
 import { messages } from '@/plugins/i18n'
 import VueI18n from "vue-i18n";
+import vuetify from './plugins/vuetify';
 Vue.use(VueI18n)
 
 Vue.config.productionTip = false
@@ -18,5 +19,6 @@ const i18n = new VueI18n({
 
 new Vue({
     render: (h) => h(App),
+    vuetify,
     i18n
 }).$mount('#app')

@@ -4,26 +4,28 @@
     dark
   >
     <v-card-text>
-      <avatar />
-      <div class="text-sm-center mb-4 mt-3">
+      <v-row class="justify-center mt-2 mb-7">
+        <avatar/>
+      </v-row>
+      <v-row class="mb-4 mt-3 justify-center">
         <h1>
           Inés <span class="light-blue--text text--lighten-3">Marcarian</span>
         </h1>
-        <span>
+      </v-row>
+      <v-row class="justify-center">
+        <p class="body-1 mt-2 text-center">
           {{ $t("message.career") }}
-        </span>
-      </div>
+        </p>
+      </v-row>
 
       <sidebar-section :options="sections.info" />
       <sidebar-section :options="sections.socials" />
       <sidebar-section :options="sections.hobbies">
         <template v-slot:item="{item}">
-          <v-chip>
-            <v-avatar>
-              <v-icon>
-                {{ item.icon }}
-              </v-icon>
-            </v-avatar>
+          <v-chip class="ma-2">
+            <v-icon left>
+              {{ item.icon }}
+            </v-icon>
             {{ item.text }}
           </v-chip>
         </template>
@@ -31,16 +33,14 @@
       <sidebar-section :options="sections.languages">
         <template v-slot:items="{items}">
           <v-container pa-0>
-            <v-layout
-              wrap
-              class="text-xs-center"
+            <v-row
+              class="text-xs-center justify-center"
             >
               <template
                 v-for="(item, i) in items"
               >
-                <v-flex
+                <v-col
                   :key="i"
-                  class="col"
                 >
                   <v-progress-circular
                     rotate="360"
@@ -52,9 +52,9 @@
                   >
                     {{ item.text }}
                   </v-progress-circular>
-                </v-flex>
+                </v-col>
               </template>
-            </v-layout>
+            </v-row>
           </v-container>
         </template>
       </sidebar-section>

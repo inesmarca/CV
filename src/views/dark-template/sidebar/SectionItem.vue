@@ -1,5 +1,5 @@
 <template>
-  <v-layout>
+  <v-layout class="my-4 ml-3">
     <v-flex
       v-if="hasIcon"
       xs2
@@ -13,7 +13,7 @@
       :xs12="!hasIcon"
     >
       <div>
-        {{ item.name }}
+        <h3 class="font-weight-medium">{{ item.name }}</h3>
       </div>
       <p>
         <a
@@ -48,4 +48,7 @@ export default {
 </script>
 
 <style scoped>
+ p {
+   margin: 0;
+ }
 </style>

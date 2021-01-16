@@ -4,47 +4,51 @@
     light
   >
     <v-card-text>
-      <content-section
+      <content-section class="mt-2"
         :title="$t('message.who')"
       >
-        {{ $t('message.personal') }}
+        <p>{{ $t('message.personal') }}</p>
       </content-section>
       <content-section
-        v-if="prouds"
+        v-if="jobs"
         :title="$t('message.jobs')"
       >
-        <v-layout
+        <v-row
           v-for="(job, i) in jobs"
           :key="i"
         >
-          <v-flex md12>
-            <h4>{{ job.title }}</h4>
+          <v-col cols="12">
+            <h3>{{ job.title }}</h3>
             <p class="mt-2"><i>{{ job.time }}</i></p>
             <p style="margin-top: -5px">{{ job.description }}</p>
-          </v-flex>
-        </v-layout>
+          </v-col>
+        </v-row>
       </content-section>
       <content-section
         v-if="educations"
         :title="$t('message.education')"
       >
-        <v-layout
+        <v-row
           v-for="(education, i) in educations"
           :key="i"
+          class="mb-2"
         >
-          <v-flex md4>
-            {{ education.from }} - {{ education.to }}
-          </v-flex>
-          <v-flex md8>
-            <strong v-if="education.title">{{ education.title }}</strong>
+          <v-col cols="12" md="4">
+            <h3 class="font-weight-regular">{{ education.from }} - {{ education.to }}</h3>
+          </v-col>
+          <v-col cols="12" md="8">
+            <h3 v-if="education.title">{{ education.title }}</h3>
             <div v-if="education.location">
               <i>{{ education.location }}</i>
             </div>
             <div v-if="education.description">
               {{ education.description }}
             </div>
-          </v-flex>
-        </v-layout>
+          </v-col>
+          <v-col>
+            <v-divider></v-divider>
+          </v-col>
+        </v-row>
       </content-section>
       <content-section
         v-if="skills"
@@ -52,24 +56,23 @@
         :title="$t('message.skills')"
       >
         <template slot="actions">
-          ({{ $t('message.percentage') }})
+          <p class="font-weight-regular caption">({{ $t('message.percentage') }})</p>
         </template>
-        <v-layout wrap>
+        <v-row wrap>
           <template
             v-for="(skill, i) in skills"
           >
-            <v-flex
+            <v-col
               v-if="skill.divider"
               :key="i"
-              md12
-              xs12
+              cols="12"
               mb-4
             />
-            <v-flex
+            <v-col
               v-else
               :key="i"
-              md6
-              xs12
+              md="6"
+              cols="12"
             >
               <div
                 class="mr-2 ml-2"
@@ -89,9 +92,9 @@
                     rounded
                 />
               </div>
-            </v-flex>
+            </v-col>
           </template>
-        </v-layout>
+        </v-row>
       </content-section>
     </v-card-text>
   </v-card>
