@@ -1,32 +1,32 @@
 <template>
   <v-app id="dark-template">
     <v-fade-transition
-      mode="out-in"
-      type="animation"
+        mode="out-in"
+        type="animation"
     >
       <v-content>
         <v-container
-          fluid
-          fill-height
+            fluid
+            fill-height
         >
           <v-layout
-            align-center
-            justify-center
+              align-center
+              justify-center
           >
             <v-flex
-              md10
-              sm12
+                md10
+                sm12
             >
               <v-layout wrap>
                 <v-flex
-                  md4
+                    md4
                 >
-                  <sidebar-container class="fill-height" />
+                  <sidebar-container class="fill-height"/>
                 </v-flex>
                 <v-flex
-                  md8
+                    md8
                 >
-                  <content-container class="fill-height" />
+                  <content-container class="fill-height"/>
                 </v-flex>
               </v-layout>
             </v-flex>
@@ -64,6 +64,7 @@
           fab
           dark
           color="blue-grey darken-2"
+          @click="downloadPdf()"
       >
         <v-icon>mdi-download</v-icon>
       </v-btn>
@@ -86,7 +87,7 @@ import TimelinePrimary from '@/views/dark-template/timeline/Primary'
 import TimelineEndless from '@/views/dark-template/timeline/Endless'
 
 export default {
-  name      : 'DarkTemplateContainer',
+  name: 'DarkTemplateContainer',
   components: {
     TimelineEndless,
     TimelinePrimary,
@@ -99,7 +100,7 @@ export default {
       lan: undefined
     }
   },
-  mounted () {
+  mounted() {
     if (localStorage.getItem('lang') !== null) {
       this.lan = localStorage.getItem('lang')
     } else {
@@ -130,6 +131,9 @@ export default {
     },
     updateLang() {
       localStorage.setItem('lang', this.lan)
+    },
+    downloadPdf() {
+
     }
   }
 }

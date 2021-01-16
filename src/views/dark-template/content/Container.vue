@@ -7,33 +7,20 @@
       <content-section
         :title="$t('message.who')"
       >
-        I'm a developer born in Iran and founder of <a href="http://delix.ir/?utm_source=portiflo&utm_medium=link&utm_content=intro&utm_campaign=delix">Delix.ir</a>, <a href="https://bytegate.ir/?utm_source=portiflo&utm_medium=link&utm_content=intro&utm_campaign=bytegate">Bytegate.ir</a> and <a href="http://bobet.ir/?utm_source=portiflo&utm_medium=link&utm_content=intro&utm_campaign=bobet">Bobet.ir</a> and co-founder of <a href="https://smo.li/?utm_source=portiflo&utm_medium=link&utm_content=intro&utm_campaign=smoli">Smo.li</a>.<br>
-        I'm interested and skilled in different topics of Information Technology including programming, web development, and computer and network security.
+        {{ $t('message.personal') }}
       </content-section>
       <content-section
         v-if="prouds"
         :title="$t('message.jobs')"
       >
         <v-layout
-          v-for="(proud, i) in prouds"
+          v-for="(job, i) in jobs"
           :key="i"
         >
-          <v-flex
-            md1
-            xs3
-          >
-            <v-icon right>
-              {{ proud.icon }}
-            </v-icon>
-          </v-flex>
-          <v-flex
-            md11
-            xs9
-          >
-            <p>
-              <strong>{{ proud.text }}</strong><br>
-              <small>{{ proud.source }}</small>
-            </p>
+          <v-flex md12>
+            <h4>{{ job.title }}</h4>
+            <p class="mt-2"><i>{{ job.time }}</i></p>
+            <p style="margin-top: -5px">{{ job.description }}</p>
           </v-flex>
         </v-layout>
       </content-section>
@@ -96,10 +83,10 @@
                   {{ skill.title }}
                 </div>
                 <v-progress-linear
-                  class="progress"
-                  color="secondary"
-                  height="3"
-                  :value="skill.value"
+                    color="blue darken-3"
+                    height="3"
+                    :value="skill.value"
+                    rounded
                 />
               </div>
             </v-flex>
@@ -181,6 +168,12 @@ export default {
       return [
         this.$t("message.school"),
         this.$t("message.university")
+      ]
+    },
+    jobs() {
+      return [
+          this.$t("message.country_job"),
+          this.$t("message.website_job")
       ]
     }
   }
