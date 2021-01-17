@@ -13,9 +13,11 @@
         </h1>
       </v-row>
       <v-row class="justify-center">
-        <p class="body-1 mt-2 text-center">
-          {{ $t("message.career") }}
-        </p>
+        <v-col cols="11">
+          <p class="body-1 mt-2 text-center mx-3">
+            {{ $t("message.career") }}
+          </p>
+        </v-col>
       </v-row>
 
       <sidebar-section :options="sections.info" />
@@ -65,6 +67,8 @@
 <script>
 import Avatar from '@/views/dark-template/sidebar/Avatar'
 import SidebarSection from '@/views/dark-template/sidebar/Section'
+import {global} from "@/plugins/i18n";
+
 export default {
   name: 'Sidebar',
   components: { SidebarSection, Avatar },
@@ -77,68 +81,36 @@ export default {
             {
               name: this.$t("message.email"),
               icon: 'mdi-email',
-              text: 'marcarianines@gmail.com',
+              text: global.email,
             },
             {
-              name: this.$t("message.birth_date"),
+              name: this.$t("message.birth_date_title"),
               icon: 'mdi-cake-variant',
-              text: 'Feb 15, 2000',
+              text: this.$t('message.birth_date'),
             },
             {
               name: this.$t("message.living"),
               icon: 'mdi-map-marker',
-              text: 'Buenos Aires, Argentina',
+              text: global.residence,
             },
             {
               name: this.$t("message.telephone"),
               icon: 'mdi-phone',
-              text: '+54 11 4927 9383',
+              text: global.phone,
             },
           ],
         },
         socials: {
           title: this.$t("message.social").toUpperCase(),
-          items: [
-            {
-              icon: 'mdi-github-circle',
-              text: 'github.com/inesmarca',
-              link: 'https://github.com/inesmarca',
-            },
-          ],
+          items: global.social_items
         },
         hobbies: {
           title: this.$t("message.hobbies").toUpperCase(),
-          items: [
-            {
-              icon: 'mdi-puzzle',
-              text: this.$t("message.puzzles"),
-            },
-            {
-              icon: 'mdi-soccer',
-              text: this.$t("message.football"),
-            },
-            {
-              icon: 'mdi-gamepad-variant',
-              text: this.$t("message.play")
-            }
-          ],
+          items: this.$t("message.hobbies_items")
         },
         languages: {
           title: this.$t("message.languages").toUpperCase(),
-          items: [
-            {
-              text: this.$t("message.spanish"),
-              value: 100,
-            },
-            {
-              text: this.$t("message.english"),
-              value: 95,
-            },
-            {
-              text: this.$t("message.chinese"),
-              value: 30,
-            },
-          ],
+          items: this.$t("message.languages_items")
         },
       }
     }

@@ -40,7 +40,7 @@
       <v-btn
           fab
           dark
-          color="blue-grey darken-1"
+          color="blue-grey darken-2"
           @click="changeLang()"
       >
         {{ language }}
@@ -97,11 +97,7 @@ export default {
       }
     },
     downloadPdf() {
-      if (this.language === "es") {
-        return "pdfs/Inés Marcarian ES.pdf"
-      } else {
-        return "pdfs/Inés Marcarian EN.pdf"
-      }
+      return "pdfs/" + this.$t('message.filename')
     }
   },
 };

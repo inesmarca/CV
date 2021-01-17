@@ -1,15 +1,13 @@
+import {i18n} from '@/main.js'
+
 export const messages = {
     en: {
         message: {
             career: "Informatics Engineering Student",
             email: "Email",
-            birth_date: "Birth Date",
+            birth_date_title: "Birth Date",
+            birth_date: 'Feb 15, 2000',
             living: "Residence",
-            puzzles: "Puzzles",
-            football: "Football",
-            spanish: "Spanish",
-            english: "English",
-            chinese: "Mandarin",
             info: "Info",
             social: "Socials",
             hobbies: "Hobbies",
@@ -20,9 +18,8 @@ export const messages = {
             jobs: "Previous Jobs",
             telephone: "Telephone",
             percentage: "% are relative not absolute",
-            play: "Video Games",
             school: {
-                from       : '2011',
+                from       : '2003',
                 to         : '2017',
                 title      : "St. Andrews Scot's School",
                 location   : 'Buenos Aires, Argentina',
@@ -45,20 +42,41 @@ export const messages = {
                 time: 'Filocolor S.A. | June 2019',
                 description: 'Developed the company\'s website. I am also in charge of maintaining the website up to date with the companies new catalog of products ( www.filocolor.com.ar ).'
             },
-            personal: 'I am 21 years old, currently studying informatics engineering (Ingeniería Informática), at the university ITBA.'
+            personal: 'I am 21 years old, currently studying informatics engineering (Ingeniería Informática), at the university ITBA.',
+            hobbies_items: [
+                {
+                    icon: 'mdi-puzzle',
+                    text: "Puzzles",
+                },
+                {
+                    icon: 'mdi-soccer',
+                    text: "Football",
+                },
+                {
+                    icon: 'mdi-gamepad-variant',
+                    text: "Video Games"
+                }
+            ],
+            languages_items: [
+                {
+                    text: "Spanish",
+                    value: 100,
+                },
+                {
+                    text: "English",
+                    value: 95,
+                }
+            ],
+            filename: "Inés Marcarian EN.pdf"
         }
     },
     es: {
         message: {
             career: "Estudiante de Ingeniería en Informática",
             email: "Email",
-            birth_date: "Fecha de Nacimiento",
+            birth_date_title: "Fecha de Nacimiento",
+            birth_date: 'Feb 15, 2000',
             living: "Residencia",
-            puzzles: "Rompecabezas",
-            football: "Fútbol",
-            spanish: "Español",
-            english: "Inglés",
-            chinese: "Mandarín",
             info: "Info",
             social: "Redés",
             hobbies: "Hobbies",
@@ -69,9 +87,8 @@ export const messages = {
             jobs: "Trabajos Anteriores",
             telephone: "Teléfono",
             percentage: "% son relativos",
-            play: "Videojuegos",
             school: {
-                from       : '2011',
+                from       : '2003',
                 to         : '2017',
                 title      : "St. Andrews Scot's School",
                 location   : 'Buenos Aires, Argentina',
@@ -94,7 +111,82 @@ export const messages = {
                 time: 'Filocolor S.A. | Junio 2019',
                 description: 'Realicé la página de la compañía. Actualmente también me encargó de mantener la página al día con el nuevo catálogo de productos ( www.filocolor.com.ar ).'
             },
-            personal: 'Tengo 21 años, actualmente estoy estudiando ingeniería en informática en la universidad ITBA.'
+            personal: 'Tengo 21 años, actualmente estoy estudiando ingeniería en informática en la universidad ITBA.',
+            hobbies_items: [
+                {
+                    icon: 'mdi-puzzle',
+                    text: "Rompecabezas",
+                },
+                {
+                    icon: 'mdi-soccer',
+                    text: "Fútbol",
+                },
+                {
+                    icon: 'mdi-gamepad-variant',
+                    text: "Videojuegos"
+                }
+            ],
+            languages_items: [
+                {
+                    text: "Español",
+                    value: 100,
+                },
+                {
+                    text: "Inglés",
+                    value: 95,
+                }
+            ],
+            filename: "Inés Marcarian ES.pdf"
         }
     }
+}
+
+export const global = {
+    email: 'marcarianines@gmail.com',
+    phone: '+54 11 4927 9383',
+    residence: 'Buenos Aires, Argentina',
+    social_items: [
+        {
+            icon: 'mdi-github-circle',
+            text: 'github.com/inesmarca',
+            link: 'https://github.com/inesmarca',
+        },
+    ],
+    skills_items: [
+        {
+            title: 'C',
+            icon : 'mdi-language-c',
+            value: 100,
+        },
+        {
+            title: 'Java',
+            icon : 'mdi-language-java',
+            value: 100,
+        },
+        {
+            title: 'PHP',
+            icon : 'mdi-language-php',
+            value: 90,
+        },
+        {
+            title: 'Python',
+            icon : 'mdi-language-python',
+            value: 80,
+        },
+        {
+            title: 'PostgreSQL',
+            icon : 'mdi-database-search',
+            value: 80,
+        },
+        {
+            title: 'Vue.js',
+            icon : 'mdi-vuejs',
+            value: 70,
+        },
+        {
+            title: 'Git',
+            icon : 'mdi-git',
+            value: 60,
+        },
+    ],
 }

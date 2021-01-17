@@ -12,7 +12,7 @@ Vue.config.productionTip = false
 Vue.use(helper)
 
 // Create VueI18n instance with options
-const i18n = new VueI18n({
+export const i18n = new VueI18n({
     locale: 'es', // set locale
     messages, // set locale messages
 })

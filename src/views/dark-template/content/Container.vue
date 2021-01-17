@@ -102,69 +102,13 @@
 
 <script>
 import ContentSection from '@/views/dark-template/content/Section'
+import {global} from "@/plugins/i18n";
+
 export default {
   name      : 'MainContent',
   components: { ContentSection },
   data      : () => ({
-    prouds: [
-      {
-        icon  : 'mdi-help-rhombus-outline',
-        text  : 'Answered 10M+ questions!',
-        source: '(Bytegate.ir post views)',
-      },
-      {
-        icon  : 'mdi-library-music',
-        text  : 'Made people enjoy and learn a new language for equivalent of 29+ years (older than myself!)',
-        source: '(Bobet.ir and its channel downloads)',
-      },
-      {
-        icon  : 'mdi-timer-sand',
-        text  : 'Saved +110 days of time of students, writers and etc!',
-        source: '(Delix.ir service usages)',
-      },
-      {
-        icon  : 'mdi-account-multiple',
-        text  : 'Tried to cover small part of 7 people expenses.',
-        source: '(My awesome colleagues)',
-      },
-    ],
-    skills: [
-      {
-        title: 'C',
-        icon : 'mdi-language-c',
-        value: 100,
-      },
-      {
-        title: 'Java',
-        icon : 'mdi-language-java',
-        value: 100,
-      },
-      {
-        title: 'PHP',
-        icon : 'mdi-language-php',
-        value: 90,
-      },
-      {
-        title: 'Python',
-        icon : 'mdi-language-python',
-        value: 80,
-      },
-      {
-        title: 'PostgreSQL',
-        icon : 'mdi-database-search',
-        value: 80,
-      },
-      {
-        title: 'Vue.js',
-        icon : 'mdi-vuejs',
-        value: 70,
-      },
-      {
-        title: 'Git',
-        icon : 'mdi-git',
-        value: 60,
-      },
-    ],
+    skills: global.skills_items
   }),
   computed: {
     educations() {
