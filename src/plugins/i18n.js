@@ -30,33 +30,28 @@ export const messages = {
                 to         : "2021 (in progress)",
                 title      : "ITBA University",
                 location   : 'Buenos Aires, Argentina',
-                description: 'Studying informatics engineering, currently finishing my third year',
-            },
-            country_job: {
-                title: 'Summer Camp Recreation Teacher',
-                time: 'Armenia Country Club | January - February 2014',
-                description: 'I was the recreational teacher for kids between the age of two and five. I had to help them learn how to swim and come up with new games and activities to do.'
+                description: 'Studying informatics engineering, currently in my fourth year.',
             },
             website_job: {
                 title: 'Website Developer',
                 time: 'Filocolor S.A. | June 2019',
                 description: 'Developed the company\'s website. I am also in charge of maintaining the website up to date with the companies new catalog of products ( www.filocolor.com.ar ).'
             },
-            personal: 'I am 21 years old, currently studying informatics engineering (Ingeniería Informática), at the university ITBA.',
-            hobbies_items: [
-                {
-                    icon: 'mdi-puzzle',
-                    text: "Puzzles",
-                },
-                {
-                    icon: 'mdi-soccer',
-                    text: "Football",
-                },
-                {
-                    icon: 'mdi-gamepad-variant',
-                    text: "Video Games"
-                }
-            ],
+            personal: "I'm 21 years old.I am currently studying Informatics Engineering at ITBA.I recently developed a software for the Armenia Country Club, for the reservation of paddle courts.I am also working on a page to create your online CV, the same one that I used to create this CV.",
+            // hobbies_items: [
+            //     {
+            //         icon: 'mdi-puzzle',
+            //         text: "Puzzles",
+            //     },
+            //     {
+            //         icon: 'mdi-soccer',
+            //         text: "Football",
+            //     },
+            //     {
+            //         icon: 'mdi-gamepad-variant',
+            //         text: "Video Games"
+            //     }
+            // ],
             languages_items: [
                 {
                     text: "Spanish",
@@ -83,7 +78,7 @@ export const messages = {
             languages: "Idiomas",
             skills: "Habilidades",
             education: "Educación",
-            who: "Un poco sobre mi...",
+            who: "Un poco sobre mí...",
             jobs: "Trabajos Anteriores",
             telephone: "Teléfono",
             percentage: "% son relativos",
@@ -99,33 +94,28 @@ export const messages = {
                 to         : "2021 (en proceso)",
                 title      : "Universidad ITBA",
                 location   : 'Buenos Aires, Argentina',
-                description: 'Estudiando ingeniería en informática, actualmente terminando mi tercer año.',
-            },
-            country_job: {
-                title: 'Maestra de Colonia',
-                time: 'Club de Campo Armenia | Enero - Febrero 2014',
-                description: 'Fui la maestra recreativa para niños de entre dos y cinco años. Tuve que ayudarlos a aprender a nadar y crear nuevos juegos y actividades para hacer.'
+                description: 'Estudiando ingeniería en informática, actualmente en mi cuarto año.',
             },
             website_job: {
                 title: 'Desarrolladora de Página',
                 time: 'Filocolor S.A. | Junio 2019',
-                description: 'Realicé la página de la compañía. Actualmente también me encargó de mantener la página al día con el nuevo catálogo de productos ( www.filocolor.com.ar ).'
+                description: 'Realicé la página de la compañía. Actualmente también me encargo de mantener la página al día con el nuevo catálogo de productos cada temporada ( www.filocolor.com.ar ).'
             },
-            personal: 'Tengo 21 años, actualmente estoy estudiando ingeniería en informática en la universidad ITBA.',
-            hobbies_items: [
-                {
-                    icon: 'mdi-puzzle',
-                    text: "Rompecabezas",
-                },
-                {
-                    icon: 'mdi-soccer',
-                    text: "Fútbol",
-                },
-                {
-                    icon: 'mdi-gamepad-variant',
-                    text: "Videojuegos"
-                }
-            ],
+            personal: 'Tengo 21 años. Actualmente estoy estudiando Ingeniería en Informática en ITBA. Recientemente desarrollé un software para el Club de Campo Armenia, para la reserva de las canchas de paddle. También estoy trabajando en una página para crear tu CV online, la misma que utilicé para crear este CV.',
+            // hobbies_items: [
+            //     {
+            //         icon: 'mdi-puzzle',
+            //         text: "Rompecabezas",
+            //     },
+            //     {
+            //         icon: 'mdi-soccer',
+            //         text: "Fútbol",
+            //     },
+            //     {
+            //         icon: 'mdi-gamepad-variant',
+            //         text: "Videojuegos"
+            //     }
+            // ],
             languages_items: [
                 {
                     text: "Español",
@@ -154,6 +144,11 @@ export const global = {
     ],
     skills_items: [
         {
+            title: 'Base de Datos',
+            icon: 'mdi-database-search',
+            value: 100,
+        },  
+        {
             title: 'C',
             icon : 'mdi-language-c',
             value: 100,
@@ -174,12 +169,17 @@ export const global = {
             value: 80,
         },
         {
-            title: 'PostgreSQL',
-            icon : 'mdi-database-search',
+            title: 'Desarrollo Back-end - Django',
+            icon: 'mdi-language-python',
             value: 80,
         },
         {
-            title: 'Vue.js',
+            title: 'Desarrollo Back-end - Spring',
+            icon: 'mdi-leaf',
+            value: 70,
+        },
+        {
+            title: 'Desarrollo Front-end',
             icon : 'mdi-vuejs',
             value: 70,
         },

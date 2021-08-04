@@ -104,10 +104,10 @@ export default {
           title: this.$t("message.social").toUpperCase(),
           items: global.social_items
         },
-        hobbies: {
-           title: this.$t("message.hobbies").toUpperCase(),
-           items: this.$t("message.hobbies_items")
-         },
+        // hobbies: {
+        //    title: this.$t("message.hobbies").toUpperCase(),
+        //    items: this.$t("message.hobbies_items")
+        //  },
         languages: {
           title: this.$t("message.languages").toUpperCase(),
           items: this.$t("message.languages_items")

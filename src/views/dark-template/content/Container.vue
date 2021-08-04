@@ -119,8 +119,7 @@ export default {
     },
     jobs() {
       return [
-          this.$t("message.country_job"),
-          this.$t("message.website_job")
+        this.$t("message.website_job")
       ]
     }
   }
